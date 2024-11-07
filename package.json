@@ -1,0 +1,40 @@
+{
+  "name": "hello-world-react-vite",
+  "displayName": "hello-world-react-vite",
+  "description": "A hello world sample extension to demonstrate using React + Vite with the Webview UI Toolkit for VS Code.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.95.0"
+  },
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "hello-world.showHelloWorld",
+        "title": "Hello World (React + Vite): Show"
+      }
+    ]
+  },
+  "scripts": {
+    "install:all": "npm install && cd webview-ui && npm install",
+    "start:webview": "cd webview-ui && npm run start",
+    "build:webview": "cd webview-ui && npm run build",
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.1.0",
+    "@types/node": "^22.9.0",
+    "@types/vscode": "^1.95.0",
+    "@typescript-eslint/eslint-plugin": "^8.13.0",
+    "@typescript-eslint/parser": "^8.13.0",
+    "eslint": "^9.14.0",
+    "glob": "^11.0.0",
+    "prettier": "^3.3.3",
+    "typescript": "^5.6.3",
+    "vscode-test": "^1.5.0"
+  }
+}
